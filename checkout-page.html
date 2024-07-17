@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="./css/Style-Checkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  </head>
+
+  <body>
+    <h2>Keranjang Belanja</h2>
+    <div id="cart">
+      <!-- Data keranjang akan dimasukkan di sini oleh JavaScript -->
+    </div>
+    <div id="checkout-section">
+      <button id="backhome-button">Back to home</button>
+      <button id="checkout-button">Checkout</button>
+    </div>
+
+    <!-- Popup Form -->
+    <div id="popup-form" class="popup">
+      <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <h3>Checkout Form</h3>
+        <form id="checkoutForm">
+          <label for="name">Nama Pembeli:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="input-name"
+            required
+          /><br />
+          <label for="phone">Nomor Telepon:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            class="input-phone"
+            required
+          /><br />
+          <label for="address">Alamat:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            class="input-address"
+            required
+          /><br />
+          <label for="paymentMethod">Metode Pembayaran:</label>
+          <select
+            id="paymentMethod"
+            name="paymentMethod"
+            class="input-payment"
+            required
+          >
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="Kartu Kredit">Kartu Kredit</option>
+            <option value="Bayar di Tempat">Bayar di Tempat</option></select
+          ><br />
+          <label for="shippingMethod">Metode Pengiriman:</label>
+          <select
+            id="shippingMethod"
+            name="shippingMethod"
+            class="input-shipping"
+            required
+          >
+            <option value="Reguler">Reguler</option>
+            <option value="Ekspres">Ekspres</option></select
+          ><br />
+          <p>Total Pembelian: <span id="total-purchase"></span></p>
+          <button type="submit">Pesan Sekarang</button>
+        </form>
+      </div>
+    </div>
+    <script src="./js/Api_checkout.js"></script>
+  </body>
+</html>
